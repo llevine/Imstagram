@@ -17,7 +17,7 @@ create table users(
 
 create table photos(
 	id serial primary key,
-	-- title varchar(255),
+	title varchar(255),
 	img_url text,
 	location varchar(255),
 	created_at timestamp,

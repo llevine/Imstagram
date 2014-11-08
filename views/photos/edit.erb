@@ -2,7 +2,8 @@
 
 <h4>Please edit the appropriate fields below</h4>
 <div class="main_content">
-	<form action="/photos/photo.id" method="POST">
+	<form action="/photos/<%= @photo.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
 			<label for="url">Image:</label>
 				<input type="text" name="photo[img_url]" value="<%= @photo.img_url %>"><br>
 			<label for="location">Location of Photo:</label>
@@ -21,7 +22,7 @@
 						</select>
 					</label>
 
-
+binding.pry
 				<input type="submit" name="submit">
 		</form>
 </div>

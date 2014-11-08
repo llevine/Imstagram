@@ -52,7 +52,7 @@ end
 # creates 15 users
 15.times do
 	photos = Photo.new({
-	# title: "#{Faker::Lorem.word}",
+	title: "#{Faker::Lorem.word}",
 	img_url: image_data.sample,
 	location: "#{Faker::AddressUS.state}",
 	caption: "#{Faker::BaconIpsum.phrase}",

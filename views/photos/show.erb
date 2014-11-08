@@ -1,5 +1,6 @@
 <div class=" single photo">
-	<h4><%= @photo.id %>TEMPRARILY HERE</h4>
+	<h4><%= @photo.id %> : TEMPRARILY HERE</h4>
+	<h4><%= @photo.title %></h4>
 	<img src="<%= @photo.img_url %>">
 	<p>
 		"<%= @photo.caption %>"<br>
@@ -12,12 +13,11 @@
 <form>
 	<button type="submit" formmethod="get" formaction="/photos/<%= @photo.id %>/edit">
 	EDIT POST</button>
-</form>
-		
+</form> | 
 
-<!-- <form action="/photos/<%=@photo.id%>" method="POST"> 
+<form action="/photos/<%=@photo.id%>" method="POST"> 
 			<input type="hidden" name="_method" value="DELETE">
 			<button id="delete">DELETE</button>
-	</div> -->
+	</div>
 
 <!-- id |  img_url |   location    |  created_at   |     caption | user_id  -->
