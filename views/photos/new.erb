@@ -1,0 +1,27 @@
+<h1>Please Fill Out The Below Fields</h1>
+<div class="main_content">
+	<form action="/photos/photo.id" method="POST">
+			<label for="url">Image:</label>
+				<input type="text" name="photo[img_url]" value="URL"><br>
+			<label for="location">Location of Photo:</label>
+				<input type="text" name="photo[location]" value="State"><br>
+			<label for="timestamp">Photo Taken On:</label>
+				<input type="text" name="photo[created_at]" value="YYYY-MM-DD"><br>
+			<label for="caption">Caption:</label>
+				<input type="textarea" name="photo[caption]" value="Place caption here!"><br>
+				
+     <!-- MENU OF USERS -->
+				<label>Choose an Author<br>
+						<select name="photo[user_id]">
+							<% @user.each do |user| %>
+								<option value="<%= user.id %>"><%= user.owner %></option>
+							<% end %>
+						</select>
+					</label>
+
+
+				<input type="submit" name="submit">
+		</form>
+</div>
+
+<!-- id |  img_url |   location    |  created_at   |     caption | user_id  -->

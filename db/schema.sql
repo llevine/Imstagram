@@ -12,16 +12,17 @@ create table users(
 	birthday date,
 	location varchar(255),
 	dog_breed varchar(255),
-	member_since timestamp
+	created_at timestamp
 );
 
 create table photos(
 	id serial primary key,
-	title varchar(255),
+	-- title varchar(255),
 	img_url text,
 	location varchar(255),
+	created_at timestamp,
 	caption varchar(255),
-	comments text
+	user_id integer references users
 );
 
 create table tags(
@@ -30,6 +31,6 @@ create table tags(
 );
 
 create table photos_tags(
-	photos_id integer references tags,
-	tags_id integer references photos
+	photo_id integer references photos,
+	tag_id integer references tags
 );
