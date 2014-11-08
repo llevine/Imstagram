@@ -1,0 +1,35 @@
+<h1>Edit <%= @member.name %>'s Bio</h1>
+<h2>Please edit the appropriate fields below</h2>
+
+<div class="main_content">
+	<form action="/members/<%= @member.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+		
+			<label for="url">Image:</label>
+				<input type="text" name="member[img_url]" value="<%= @member.img_url %>"><br>
+
+			<label for="location">Location:</label>
+				<input type="text" name="member[location]" value="<%= @member.location %>"><br>
+
+			<label for="breed">Breed:</label>
+				<input type="text" name="member[breed]" value="<%= @member.breed %>"><br>
+
+			<label for="birthday">Birthday:</label>
+				<input type="text" name="member[birthday]" value="<%= @member.birthday %>"><br>
+
+			<label for="activities">Favorite Activity:</label>
+				<input type="text" name="member[activities]" value="<%= @member.activities %>"><br>
+
+			<label for="toys">Favorite Toy:</label>
+				<input type="text" name="member[toys]" value="<%= @member.toys %>"><br>								
+
+			<label for="owner">Owner:</label>
+				<input type="text" name="member[owner]" value="<%= @member.owner %>"><br>
+
+				<input type="submit" name="submit">
+		</form>
+</div>
+
+<!-- members table column headers -->
+	<!-- id | owner  |  name  |  img_url  |  birthday  |  location  |  breed  |  activities  |  toys  |  created_at -->
+<!-- members table joined with photos -->

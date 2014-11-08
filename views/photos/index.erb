@@ -3,9 +3,13 @@
 <div class="main_content">
 	<% @photos.each do |photo| %>
 		<h4>TEMPORARILY KEEP THE ID: <%= photo.id %></h4>
-		<a href="/photos/<%= photo.id %>" alt="dog image"><img src="<%= photo.img_url %>"></a>
+		<a href="/photos/<%= photo.id %>"><img src="<%= photo.img_url %>"></a>
 	<% end %>
 </div>
 
 
-<!-- id |  img_url |   location    |  created_at   |     caption | user_id  -->
+
+
+<!-- photos table column headers -->
+	<!-- id | title  |  img_url  |  location |  created_at  |  caption  | member_id -->
+<!-- photos table joined with tags -->

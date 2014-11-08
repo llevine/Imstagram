@@ -1,17 +1,19 @@
-drop table if exists users cascade;
+drop table if exists members cascade;
 drop table if exists photos cascade;
 drop table if exists tags cascade;
 drop table if exists photos_tags;
 
-create table users(
+create table members(
 	id serial primary key,
 	owner varchar(255) not null,
-	dog_name varchar(255),
+	name varchar(255),
 	img_url text,
 	-- DATE - format YYYY-MM-DD
 	birthday date,
 	location varchar(255),
-	dog_breed varchar(255),
+	breed varchar(255),
+	activities text,
+	toys text,
 	created_at timestamp
 );
 
@@ -22,7 +24,7 @@ create table photos(
 	location varchar(255),
 	created_at timestamp,
 	caption varchar(255),
-	user_id integer references users
+	member_id integer references members
 );
 
 create table tags(

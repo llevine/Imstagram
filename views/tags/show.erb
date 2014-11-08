@@ -1,1 +1,14 @@
-show.erb
+<h1><%= @tag.name %>s</h1>
+TEMPORARILY TAG ID: <%= @tag.id %>
+
+<div class="main_content">
+	<% @tag.photos.each do |photo| %>
+		<%= photo.title %><br>
+		TEMPORARILY PHOTO ID <%= photo.id %><br>
+		<img src="<%= photo.img_url %>">
+	<% end %>
+</div>
+
+<!-- tag table column headers -->
+ <!-- id |    name    -->
+<!-- tag table joined with photos -->

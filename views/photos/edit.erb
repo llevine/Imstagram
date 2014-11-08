@@ -1,4 +1,4 @@
-<h1>EDIT REINTRODUCE THE TITLE COLUMN</h1>
+<h1>Edit <%= @photo.title %>'s Information</h1>
 
 <h4>Please edit the appropriate fields below</h4>
 <div class="main_content">
@@ -13,18 +13,19 @@
 			<label for="caption">Caption:</label>
 				<input type="textarea" name="photo[caption]" value="<%= @photo.caption %>"><br>
 				
-     <!-- MENU OF USERS -->
-				<label>Choose an Author<br>
-						<select name="photo[user_id]">
-							<% @user.each do |user| %>
-								<option value="<%= user.id %>"><%= user.owner %></option>
+     <!-- MENU OF MEMBERS -->
+				<label>Choose a Member<br>
+						<select name="photo[member_id]">
+							<% @member.each do |member| %>
+								<option value="<%= member.id %>"><%= member.owner %></option>
 							<% end %>
 						</select>
 					</label>
 
-binding.pry
 				<input type="submit" name="submit">
 		</form>
 </div>
 
-<!-- id |  img_url |   location    |  created_at   |     caption | user_id  -->
+<!-- photos table column headers -->
+	<!-- id | title  |  img_url  |  location |  created_at  |  caption  | member_id -->
+<!-- photos table joined with tags -->

@@ -9,13 +9,13 @@ require 'ffaker'
 
 
 # models
-require_relative '../models/user.rb'
+require_relative '../models/member.rb'
 require_relative '../models/photo.rb'
 require_relative '../models/tag.rb'
 
 
 # Start from scratch
-User.destroy_all
+Member.destroy_all
 Photo.destroy_all
 Tag.destroy_all
 
@@ -30,15 +30,21 @@ birthday_data = ["1996-01-08", "1990-11-29", "2012-01-08", "2014-01-01", "2010-1
 
 image_data = ["http://placepuppy.it/200/300"]
 
-# creates 10 users
+toys_data = ["ball", "turtle", "frog", "rubber duck", "chicken"]
+
+activities_data = ["long walks in the park", "chasing after birds", "playing frisbee", "digging holes", "chewing shoes"]
+
+# creates 10 members
 10.times do
-	User.create(
+	Member.create(
 		owner: "#{owner_first_name.sample} #{Faker::Name.last_name}",
-		dog_name: "#{Faker::HipsterIpsum.word}",
-		img_url: image_data.sample,
+		name: "#{Faker::HipsterIpsum.word}",
+		img_url: "http://www.fillmurray.com/g/200/300",
 		birthday: birthday_data.sample,
 		location: "#{Faker::AddressUS.state}",
-		dog_breed: breed_data.sample
+		breed: breed_data.sample,
+		activities: activities_data.sample,
+		toys: toys_data.sample
 		)
 end
 
@@ -49,14 +55,14 @@ end
 	)
 end
 
-# creates 15 users
+# creates 15 members
 15.times do
 	photos = Photo.new({
 	title: "#{Faker::Lorem.word}",
 	img_url: image_data.sample,
 	location: "#{Faker::AddressUS.state}",
 	caption: "#{Faker::BaconIpsum.phrase}",
-	user: User.all.sample
+	member: Member.all.sample
 	})
 	photos.save
 	#this here makes the join

@@ -1,0 +1,24 @@
+<h1><%= @member.name %>'s Bio-Page</h1>
+<div class="single member">
+	<h4><%= @member.id %> : TEMPRARILY HERE</h4>
+	<img src="<%= @member.img_url %>">
+		<ul>
+			<li>Name: <%= @member.name %></li>
+			<li>From: <%= @member.location %></li>
+			<li>Breed: <%= @member.breed %></li>
+			<li>Birthday: <%= @member.birthday %></li>
+			<li>Favorite Activity: <%= @member.activities %></li>
+			<li>Favorite Toy: <%= @member.toys %></li>
+			<li>Owner: <%= @member.owner %></li>
+			<li>Member Since: <%= @member.created_at %></li>
+		</ul>
+</div>
+
+<form>
+	<button type="submit" formmethod="get" formaction="/members/<%= @member.id %>/edit">
+	EDIT POST</button>
+</form>
+
+<!-- members table column headers -->
+	<!-- id | owner  |  name  |  img_url  |  birthday  |  location  |  breed  |  activities  |  toys  |  created_at -->
+<!-- members table joined with photos -->

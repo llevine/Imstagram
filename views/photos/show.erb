@@ -1,23 +1,25 @@
-<div class=" single photo">
+<div class="single photo">
 	<h4><%= @photo.id %> : TEMPRARILY HERE</h4>
 	<h4><%= @photo.title %></h4>
 	<img src="<%= @photo.img_url %>">
-	<p>
-		"<%= @photo.caption %>"<br>
-		Posted by: <%= @photo.user.owner %><br>
-		Taken in: <%= @photo.location %><br>
-		On: <%= @photo.created_at %>
-	</p>
+	<ul>
+		<li>"<%= @photo.caption %>"</li>
+		<li>Posted by: <%= @photo.member.owner %></li>
+		<li>Taken in: <%= @photo.location %></li>
+		<li>On: <%= @photo.created_at %></li>
+	</ul>
 </div>
 
 <form>
 	<button type="submit" formmethod="get" formaction="/photos/<%= @photo.id %>/edit">
 	EDIT POST</button>
-</form> | 
+</form>
 
 <form action="/photos/<%=@photo.id%>" method="POST"> 
 			<input type="hidden" name="_method" value="DELETE">
 			<button id="delete">DELETE</button>
 	</div>
 
-<!-- id |  img_url |   location    |  created_at   |     caption | user_id  -->
+<!-- photos table column headers -->
+	<!-- id | title  |  img_url  |  location |  created_at  |  caption  | member_id -->
+<!-- photos table joined with tags -->

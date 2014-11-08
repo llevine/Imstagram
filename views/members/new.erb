@@ -1,0 +1,27 @@
+<h1>Create a new member!</h1>
+<h2>Please fill out the fields below</h2>
+<div class="main_content">
+	<form action="/members/member.id" method="POST">
+			<label for="url">Image:</label>
+				<input type="text" name="member[img_url]" value="member Image URL"><br>
+			<label for="name">Name:</label>
+				<input type="text" name="member[name]" value="member's Name"><br>
+			<label for="location">Location:</label>
+				<input type="text" name="member[location]" value="State"><br>
+			<label for="breed">Breed:</label>
+				<input type="text" name="member[breed]" value="Breed"><br>
+			<label for="birthday">Birthday:</label>
+				<input type="text" name="member[birthday]" value="YYYY-MM-DD"><br>
+			<label for="activities">Favorite Activity:</label>
+				<input type="text" name="member[activities]" value="Activities"><br>
+			<label for="toys">Favorite Toy:</label>
+				<input type="text" name="member[toys]" value="Toys"><br>
+			<label for="owner">Owner:</label>
+				<input type="text" name="member[owner]" value="First Last"><br>
+				<input type="submit" name="submit">
+		</form>
+</div>
+
+<!-- members table column headers -->
+	<!-- id | owner  |  name  |  img_url  |  birthday  |  location  |  breed  |  activities  |  toys  |  created_at -->
+<!-- members table joined with photos -->

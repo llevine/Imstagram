@@ -5,13 +5,13 @@ require 'pry'
 require 'better_errors'
 
 require_relative 'models/photo.rb'
-require_relative 'models/user.rb'
+require_relative 'models/member.rb'
 require_relative 'models/tag.rb'
 
 require_relative 'controllers/home_controller'
 require_relative 'controllers/photos_controller'
 require_relative 'controllers/tags_controller'
-require_relative 'controllers/users_controller'
+require_relative 'controllers/members_controller'
 
 configure :development do
   use BetterErrors::Middleware
