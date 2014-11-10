@@ -1,31 +1,30 @@
-<h1><%= @photo.title %></h1>
-	<div class="main_content">
-		<div id="bioplate">
-			<img src="<%= @photo.img_url %>" id="main_image"><br>
-				<div class="text">
-					<span>Caption:</span> "<%= @photo.caption %>"<br>
-					<span>Posted by:</span> <a href="/members/<%= @photo.member.id%>"><%= @photo.member.owner %><br>
-					<span>Taken in:</span> <%= @photo.location %><br>
-					<span>Posted On:</span> <%= @photo.created_at %>
-				</div>
-					<div id="tags">
-						<h4>Tags:</h4>
-						<% @photo.tags.each do |tag| %>
-						<a href="/tags/<%= tag.id %>"><%= tag.name %></a>
-						<% end %>
+<div class="members show">
+	<h1><%= @photo.title %></h1>
+
+			<div id="bioplate">
+				<img src="<%= @photo.img_url %>" class="photo">
+					<div class="text">
+						<span>Caption:</span> "<%= @photo.caption %>"<br>
+						<span>Posted by:</span> <a href="/members/<%= @photo.member.id%>"><%= @photo.member.owner %></a><br>
+						<span>Taken in:</span> <%= @photo.location %><br>
+						<span>Posted On:</span> <%= @photo.created_at %><br>
+						<span>Tags:</span> 
+							<% @photo.tags.each do |tag| %>
+							<a href="/tags/<%= tag.id %>"><%= tag.name %></a>,
+							<% end %>
 					</div>
+
 					<form>
 						<button type="submit" formmethod="get" formaction="/photos/<%= @photo.id %>/edit">
-						EDIT POST</button>
+							EDIT POST</button>
 					</form>
 
 					<form action="/photos/<%=@photo.id%>" method="POST"> 
-								<input type="hidden" name="_method" value="DELETE">
-								<button id="delete">DELETE</button>
+						<input type="hidden" name="_method" value="DELETE">
+						<button id="delete">DELETE</button>
 					</form>
-				
-		</div>
-	</div>
+			</div>
+</div>
 
 
 <!-- photos table column headers -->

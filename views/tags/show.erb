@@ -1,12 +1,17 @@
-<h1><%= @tag.name %>s</h1>
-TEMPORARILY TAG ID: <%= @tag.id %>
-
-<div class="main_content">
-	<% @tag.photos.each do |photo| %>
-		<%= photo.title %><br>
-		TEMPORARILY PHOTO ID <%= photo.id %><br>
-		<img src="<%= photo.img_url %>">
-	<% end %>
+<div class="tags show">
+	<h1 class="tag_name"><%= @tag.name %>s</h1>
+		
+		<form action="/tags/<%=@tag.id%>" method="POST"> 
+			<input type="hidden" name="_method" value="DELETE">
+			<button id="delete">DELETE TAG</button>
+		</form>
+		
+		<% @tag.photos.each do |photo| %>
+			<a href="/photos/<%= photo.id %>"><div class="post">
+				<h2><%= photo.title %></h2><br>
+				<img src="<%= photo.img_url %>">
+			</div></a>
+		<% end %>
 </div>
 
 <!-- tag table column headers -->

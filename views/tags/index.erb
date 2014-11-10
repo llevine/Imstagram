@@ -1,8 +1,12 @@
-<h1>Click A Tag To See All the Related Images</h1>
-<div class="main_content">
-	<% @tags.each do |tag| %>
-		<a href="/tags/<%= tag.id %>"><h4><%= tag.name %></h4></a>
-	<% end %>
+<div class="tags">
+	<h1>Click A Tag To See All the Related Images</h1>
+	<p>
+		<div id="tags_group">
+		<% @tags.each do |tag| %>
+			<span class="divider"> | </span><a href="/tags/<%= tag.id %>"><%= tag.name %></a><span class="divider"> | </span>
+		<% end %>
+		</div>
+	</p>
 </div>
 
 

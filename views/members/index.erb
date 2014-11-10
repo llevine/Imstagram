@@ -7,7 +7,6 @@
 			<% @members.each do |member| %>
 				<div class="single">
 					<a href="/members/<%= member.id %>">
-						<!-- <h4>TEMPORARILY KEEP THE ID: <%= member.id %> | </h4> -->
 						<img src="<%= member.img_url %>">
 						<p>"<%= member.name %>"<br>
 						Owned By: <%= member.owner %></p>

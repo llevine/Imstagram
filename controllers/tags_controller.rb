@@ -14,3 +14,10 @@ get '/tags/:id' do
 	@tag = Tag.find(params[:id])
 	erb :'tags/show'
 end
+
+# DESTROY - delete the Tag post from the db
+delete '/tags/:id' do
+	tag = Tag.find(params[:id])
+	tag.destroy
+	redirect('/tags')
+end

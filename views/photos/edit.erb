@@ -1,29 +1,30 @@
-<h1>Edit <%= @photo.title %>'s Information</h1>
+<div class="members form">
+	<h1>Edit <%= @photo.title %>'s Information</h1>
+		<form action="/photos/<%= @photo.id %>" method="POST" class="edit">
+		<input type="hidden" name="_method" value="PUT">
+			<h2>Please edit the appropriate fields below</h2>
+				<label for="title">Title:</label>
+					<input type="text" name="photo[title]" value="<%= @photo.title %>"><br>
+				<label for="url">Image:</label>
+					<input type="text" name="photo[img_url]" value="<%= @photo.img_url %>"><br>
+				<label for="location">Location of Photo:</label>
+					<input type="text" name="photo[location]" value="<%= @photo.location %>"><br>
+				<label for="caption">Caption:</label>
+					<input type="textarea" name="photo[caption]" value="<%= @photo.caption %>"><br>
+					
 
-<h4>Please edit the appropriate fields below</h4>
-<div class="main_content">
-	<form action="/photos/<%= @photo.id %>" method="POST" class="edit">
-	<input type="hidden" name="_method" value="PUT">
-			<label for="url">Image:</label>
-				<input type="text" name="photo[img_url]" value="<%= @photo.img_url %>"><br>
-			<label for="location">Location of Photo:</label>
-				<input type="text" name="photo[location]" value="<%= @photo.location %>"><br>
-			<label for="caption">Caption:</label>
-				<input type="textarea" name="photo[caption]" value="<%= @photo.caption %>"><br>
-				
+					<input type="hidden" name="photo[created_at]" value="<%= @photo.created_at %>"><br>
+	     <!-- MENU OF MEMBERS -->
+					<label>Choose a Member<br>
+							<select name="photo[member_id]">
+								<% @member.each do |member| %>
+									<option value="<%= member.id %>"><%= member.owner %></option>
+								<% end %>
+							</select>
+					</label>
 
-				<input type="hidden" name="photo[created_at]" value="<%= @photo.created_at %>"><br>
-     <!-- MENU OF MEMBERS -->
-				<label>Choose a Member<br>
-						<select name="photo[member_id]">
-							<% @member.each do |member| %>
-								<option value="<%= member.id %>"><%= member.owner %></option>
-							<% end %>
-						</select>
-				</label>
-
-				<input type="submit" name="submit">
-		</form>
+					<input type="submit" name="submit">
+			</form>
 </div>
 
 <!-- photos table column headers -->

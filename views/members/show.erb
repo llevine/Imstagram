@@ -36,13 +36,17 @@
 			</form>
 		</div>
 
-
-		
-
-
-
-
-
+		<div id="post_group">
+			<h2>Posts</h2>
+			<a href="/photos/new">ADD POST</a>
+			
+			<% @member.photos.each do |photo| %>
+			<div class="post">
+				<a href="/photos/<%= photo.id %>"><img src="<%= photo.img_url %>"><br>
+				<%= photo.title %></a>
+			</div>
+			<% end %>
+		</div>
 </div>
 
 <!-- members table column headers -->

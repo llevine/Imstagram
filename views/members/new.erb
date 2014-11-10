@@ -1,52 +1,52 @@
-<h1>Create a new member!</h1>
-<div class="main_content">
-	<form action="/members/member.id" method="POST" class="edit">
-		<h2>Please fill out the fields below</h2>
-			<label for="url">
-				<span>Image:</span>
-				<input type="text" name="member[img_url]" value="Dog's Image URL"><br>
-			</label>
+<div class="members new">
+	<h1>Create a new member!</h1>
+		<form action="/members/member.id" method="POST" class="edit">
+			<h2>Please fill out the fields below</h2>
+				<label for="url">
+					<span>Image:</span>
+					<input type="text" name="member[img_url]" value="Dog's Image URL"><br>
+				</label>
 
-			<label for="name">
-				<span>Name:</span>
-				<input type="text" name="member[name]" value="Dog's Name"><br>
-			</label>
+				<label for="name">
+					<span>Name:</span>
+					<input type="text" name="member[name]" value="Dog's Name"><br>
+				</label>
 
-			<label for="location">
-				<span>Location:</span>
-				<input type="text" name="member[location]" value="State"><br>
-			</label>
+				<label for="location">
+					<span>Location:</span>
+					<input type="text" name="member[location]" value="State"><br>
+				</label>
 
-			<label for="breed">
-				<span>Breed:</span>
-				<input type="text" name="member[breed]" value="Breed"><br>
-			</label>
+				<label for="breed">
+					<span>Breed:</span>
+					<input type="text" name="member[breed]" value="Breed"><br>
+				</label>
 
-			<label for="birthday">
-				<span>Birthday:</span>
-				<input type="text" name="member[birthday]" value="YYYY-MM-DD"><br>
-			</label>
+				<label for="birthday">
+					<span>Birthday:</span>
+					<input type="text" name="member[birthday]" value="YYYY-MM-DD"><br>
+				</label>
 
-			<label for="activities">
-				<span>Favorite Activity:</span>
-				<input type="text" name="member[activities]" value="Activity"><br>
-			</label>
+				<label for="activities">
+					<span>Favorite Activity:</span>
+					<input type="text" name="member[activities]" value="Activity"><br>
+				</label>
 
-			<label for="toys">
-				<span>Favorite Toy:</span>
-				<input type="text" name="member[toys]" value="Toy"><br>
-			</label>
+				<label for="toys">
+					<span>Favorite Toy:</span>
+					<input type="text" name="member[toys]" value="Toy"><br>
+				</label>
 
-			<label for="owner">
-				<span>Owner:</span>
-				<input type="text" name="member[owner]" value="First Last"><br>
-			</label>
+				<label for="owner">
+					<span>Owner:</span>
+					<input type="text" name="member[owner]" value="First Last"><br>
+				</label>
 
 
-			<input type="hidden" name="member[member_since]" value="<%=Date.today.to_s%>">
+				<input type="hidden" name="member[member_since]" value="<%=Date.today.to_s%>">
 
-			<input type="submit" name="submit" class="button">
-		</form>
+				<input type="submit" name="submit" class="button">
+			</form>
 </div>
 
 <!-- members table column headers -->

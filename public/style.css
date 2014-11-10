@@ -34,7 +34,7 @@ a {
 /*-------- END --------*/
 
 /*-------- MAIN CONTENT STYLING --------*/
-.welcome>h1, .welcome>h2, .members>h1 {
+.welcome>h1, .welcome>h2, .members>h1, .tags>h1 {
 		margin: 0;
 		font-family: 'Amatic SC', cursive;
 		font-size: 4em;
@@ -49,7 +49,6 @@ a {
 .welcome>h1 {
 		display: block;
 		margin-bottom: 10px;
-		background: green;
 	}
 
 #immy {
@@ -58,7 +57,7 @@ a {
 		margin: 35px auto;
 }
 
-.members>h2, #new, .single a {
+.members>h2, #new, .single a, #post_group a {
 		display: block;
 		margin-top: 0;
 		margin-bottom: 20px;
@@ -117,7 +116,7 @@ a {
 		letter-spacing: 1.5pt;
 }
 
-#bioplate button {
+#bioplate button, .tags button {
 		margin: 0 0 0 10px;
 		color: rgba(255, 255, 255, .8);
 		background: none;
@@ -128,16 +127,143 @@ a {
 	margin-top: 10px;
 }
 
+.show #post_group {
+	margin-top: 10px;	
+	border: 2px solid rgba(255, 255, 255, .2);
+}
+
+#post_group>h2 {
+		font: 400 18pt 'PT Sans', sans-serif;
+		margin-top: 10px;	
+		margin-bottom: 5px;
+}
+
+#post_group {
+	margin: 20px;
+	border: 3px solid #43443d;
+}
+
+.post {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.post img {
+	max-height: 250px;
+	margin-bottom: 8px;
+}
 
 
 
 /*-------- END --------*/
 
+/*--------- FORM TEMPLATE ---------*/
+
+.edit {
+		margin: 0 auto;
+    max-width: 500px;
+
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    /*----weight font-size fontname, backup font-----*/
+    font: 700 10pt 'Asap', sans-serif;
+    color: #888;
+    border:1px solid #E4E4E4;
+}
+.edit h2 {
+    font-size: 25px;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom:1px solid #E4E4E4;
+		margin: -10px -15px 30px -10px; 
+		color: #888;
+}
+.edit label {
+    display: block;
+    margin: 0px;
+}
+
+/* > means only select the child level elements. ex) below it means only select the child spans of label*/
+.edit label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+.edit input[type="text"], .edit textarea, .edit select {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.edit textarea{
+    padding: 5px 3px 3px 5px;
+}
+.edit select {
+    background: #FFF url('down-arrow.png') no-repeat right;
+    background: #FFF url('down-arrow.png') no-repeat right);
+    text-indent: 0.01px;
+    width: 70%;
+    height: 35px;
+    line-height: 25px;
+}
+.edit textarea{
+    height:100px;
+}
+.edit .button {
+    background: #E27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+}
+
+
+
+.show .text a {
+	color: #51a6ff;
+}
+
+#bioplate .photo {
+		border: 2px solid rgba(255, 255, 255, .2);
+}
+
+.tags a, #tags_group {
+	text-align: center;
+	font: 400 14pt 'PT Sans', sans-serif;
+	font-size: 18pt;
+	color: rgba(125, 255, 5, .8)
+}
+
+.tags h2 {
+	margin-bottom: -10px;
+}
+
+.tags 
+
+/*-------- END --------*/
 
 /* EVENT HANDLERS */
 
 .single:hover, #bioplate button:hover {
 	background: rgba(81, 166, 255, .3);
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 
