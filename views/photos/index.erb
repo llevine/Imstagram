@@ -1,11 +1,14 @@
-<h1>Photos</h1>
-<a href="/photos/new">New Post</a>
-<div class="main_content">
+<h1>All Photo Posts</h1>
+<a href="/photos/new" id="new">New Post</a>
+<div id="main_content">
 	<% @photos.each do |photo| %>
-	<div>
-		<h4>TEMPORARILY KEEP THE ID: <%= photo.id %></h4>
-		<a href="/photos/<%= photo.id %>"><img src="<%= photo.img_url %>" class="single_photo"></a>
-	</div>
+		<div class="single">
+			<h4>Photo ID: <%= photo.id %></h4>
+			<h2><%= photo.title %></h2>
+				<a href="/photos/<%= photo.id %>">
+						<img src="<%= photo.img_url %>" class="single_post">
+				</a>
+		</div>
 	<% end %>
 </div>
 

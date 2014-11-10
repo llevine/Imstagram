@@ -1,18 +1,20 @@
 <!-- RUBY FUNCTIONS --> 
 
-<!-- formats the dates -->
-<% def reverse_array (date)
-	date_array = date.to_s.split("-")
-	year = date_array.first
-	date_array.insert(3, year).shift
-	return date_array.join("-")
-	end%>
+	<!-- formats the dates -->
+	<% def reverse_array (date)
+		date_array = date.to_s.split("-")
+		year = date_array.first
+		date_array.insert(3, year).shift
+		return date_array.join("-")
+		end%>
+	<!-- END -->
 
-<!-- html starts here -->
-<h1><%= @member.name %>'s Bio-Page</h1>
-<div id="main_content">
+<!--////////////////// html starts here /////////////////////-->
+<div class="members show">
+	<h1><%= @member.name %>'s Bio-Page</h1>
+
 		<div id="bioplate">
-			<img src="<%= @member.img_url %>" id="main_image">
+			<img src="<%= @member.img_url %>">
 				<div class="text">
 					<span>Name:</span> <%= @member.name %><br>
 					<span>From:</span> <%= @member.location %><br>
@@ -22,27 +24,24 @@
 					<span>Favorite Toy:</span> <%= @member.toys %><br>
 					<span>Owner:</span> <%= @member.owner %><br>
 					<span>Member Since:</span> <%=  reverse_array(@member.member_since) %><br>
-					<form>
-						<button type="submit" formmethod="get" formaction="/members/<%= @member.id %>/edit">EDIT MEMBER</button>
-					</form>
-
-					<form action="/members/<%=@member.id%>" method="POST"> 
-						<input type="hidden" name="_method" value="DELETE">
-						<button id="delete">DELETE MEMBER</button>
-					</form>
 				</div>
-		</div>
-		<div id="all_posts">
-			<h1>Posts</h1>
-			<a href="/photos/new">ADD POST</a>
 			
-			<% @member.photos.each do |photo| %>
-			<div class="post">
-				<a href="/photos/<%= photo.id %>"><img src="<%= photo.img_url %>"><br>
-				<%= photo.title %></a>
-			</div>
-			<% end %>
+			<form>
+				<button type="submit" formmethod="get" formaction="/members/<%= @member.id %>/edit">EDIT MEMBER</button>
+			</form>
+
+			<form action="/members/<%=@member.id%>" method="POST"> 
+				<input type="hidden" name="_method" value="DELETE">
+				<button id="delete">DELETE MEMBER</button>
+			</form>
 		</div>
+
+
+		
+
+
+
+
 
 </div>
 

@@ -65,7 +65,6 @@ end
 	img_url: image_data.sample,
 	location: "#{Faker::AddressUS.state}",
 	caption: "#{Faker::BaconIpsum.phrase}",
-	added: dates_data.sample,
 	member: Member.all.sample
 	})
 	photos.save

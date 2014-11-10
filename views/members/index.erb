@@ -1,16 +1,20 @@
-<h1>The Imstagram Community</h1>
-<a href="/members/new" id="new">New Member</a>
-
-<div id="main_content">
-	<% @members.each do |member| %>
-		<div class="single member">
-			<a href="/members/<%= member.id %>">
-				<!-- <h4>TEMPORARILY KEEP THE ID: <%= member.id %> | </h4> -->
-				<img src="<%= member.img_url %>" class="single_photo">
-				<h2>"<%= member.name %>"</h2>
-			</a>
+<div class="members">
+	<h1>The Imstagram Community</h1>
+	<h2>
+		<a href="/members/new" id="new">New Member</a>
+	</h2>
+		<div id="group">
+			<% @members.each do |member| %>
+				<div class="single">
+					<a href="/members/<%= member.id %>">
+						<!-- <h4>TEMPORARILY KEEP THE ID: <%= member.id %> | </h4> -->
+						<img src="<%= member.img_url %>">
+						<p>"<%= member.name %>"<br>
+						Owned By: <%= member.owner %></p>
+					</a>
+				</div>
+			<% end %>
 		</div>
-	<% end %>
 </div>
 
 

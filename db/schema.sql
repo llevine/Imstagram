@@ -22,7 +22,7 @@ create table photos(
 	title varchar(255),
 	img_url text,
 	location varchar(255),
-	added date,
+	created_at timestamp,
 	caption varchar(255),
 	member_id integer references members
 );

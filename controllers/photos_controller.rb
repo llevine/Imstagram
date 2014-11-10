@@ -4,7 +4,7 @@
 
 # INDEX - shows all the photoposts in the db
 get '/photos' do
-	@photos = Photo.order(added: :desc)
+	@photos = Photo.order(created_at: :desc)
 	erb :'photos/index'
 end
 

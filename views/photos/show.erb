@@ -1,31 +1,32 @@
-<div class="single photo">
-	<h4><%= @photo.id %> : TEMPRARILY HERE</h4>
-	<h4><%= @photo.title %></h4>
-	<img src="<%= @photo.img_url %>">
-	<ul>
-		<li>"<%= @photo.caption %>"</li>
-		<li>Posted by: <%= @photo.member.owner %></li>
-		<li>Taken in: <%= @photo.location %></li>
-		<li>On: <%= @photo.added %></li>
-	</ul>
+<h1><%= @photo.title %></h1>
+	<div class="main_content">
+		<div id="bioplate">
+			<img src="<%= @photo.img_url %>" id="main_image"><br>
+				<div class="text">
+					<span>Caption:</span> "<%= @photo.caption %>"<br>
+					<span>Posted by:</span> <a href="/members/<%= @photo.member.id%>"><%= @photo.member.owner %><br>
+					<span>Taken in:</span> <%= @photo.location %><br>
+					<span>Posted On:</span> <%= @photo.created_at %>
+				</div>
+					<div id="tags">
+						<h4>Tags:</h4>
+						<% @photo.tags.each do |tag| %>
+						<a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+						<% end %>
+					</div>
+					<form>
+						<button type="submit" formmethod="get" formaction="/photos/<%= @photo.id %>/edit">
+						EDIT POST</button>
+					</form>
 
-	<h4>Tags:</h4>
-	<ul>
-		<% @photo.tags.each do |tag| %>
-		<a href="/tags/<%= tag.id %>"><li><%= tag.name %></li></a>
-		<% end %>
-	</ul>
-</div>
-
-<form>
-	<button type="submit" formmethod="get" formaction="/photos/<%= @photo.id %>/edit">
-	EDIT POST</button>
-</form>
-
-<form action="/photos/<%=@photo.id%>" method="POST"> 
-			<input type="hidden" name="_method" value="DELETE">
-			<button id="delete">DELETE</button>
+					<form action="/photos/<%=@photo.id%>" method="POST"> 
+								<input type="hidden" name="_method" value="DELETE">
+								<button id="delete">DELETE</button>
+					</form>
+				
+		</div>
 	</div>
+
 
 <!-- photos table column headers -->
 	<!-- id | title  |  img_url  |  location |  created_at  |  caption  | member_id -->
