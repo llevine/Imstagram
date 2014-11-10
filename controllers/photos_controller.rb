@@ -4,30 +4,32 @@
 
 # INDEX - shows all the photoposts in the db
 get '/photos' do
-	@photos = Photo.all
+	@photos = Photo.order(added: :desc)
 	erb :'photos/index'
 end
 
 # NEW - brings up the create a new photo form
 get '/photos/new' do
 	@member = Member.all
+	@tags = Tag.all
 	erb :'photos/new'
 end
 
 # SHOW - shows an individual photo post.
 get '/photos/:id' do
 	@photo = Photo.find(params[:id])
+	@tags = Tag.all
 	erb :'photos/show'
 end
 
 # CREATE - puts the photo in the database and redirects to appropriate page
 post '/photos/:id' do
 	photo = Photo.new(params[:photo])
-	if photo.save
-		redirect "/photos/#{photo.id}"
-	else
-		redirect "/photos/new"
-	end
+	# adds a tag to a new photo
+	tag = Tag.find(params[:tags])
+	photo.tags << tag
+	photo.save
+	redirect "/photos/#{photo.id}"
 end
 
 # EDIT - edit an individual photo post
@@ -46,7 +48,6 @@ put '/photos/:id' do
 		redirect "/photos/#{photo.id}/edit"
 	end
 end
-
 
 # DESTROY - delete the photo post from the db
 delete '/photos/:id' do

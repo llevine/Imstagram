@@ -1,26 +1,42 @@
-<h1>Please Fill Out The Below Fields</h1>
+<h1>New Photo</h1>
 <div class="main_content">
-	<form action="/photos/photo.id" method="POST">
-			<label for="url">Image:</label>
+	<form action="/photos/photo.id" method="POST" class="edit">
+			<h2>Please Fill Out The Below Fields</h2>
+			<label for="url">
+				<span>Image:</span>
 				<input type="text" name="photo[img_url]" value="URL"><br>
-			<label for="location">Location of Photo:</label>
+			</label>
+
+			<label for="location">
+				<span>Photo Taken In:</span>
 				<input type="text" name="photo[location]" value="State"><br>
-			<label for="timestamp">Photo Taken On:</label>
-				<input type="text" name="photo[created_at]" value="YYYY-MM-DD"><br>
-			<label for="caption">Caption:</label>
-				<input type="textarea" name="photo[caption]" value="Place caption here!"><br>
+			</label>
+
+			<label for="caption">
+				<span>Caption:</span>
+				<input type="text" name="photo[caption]" value="Place caption here!"><br>
+			</label>
 				
-     <!-- MENU OF memberS -->
-				<label>Choose a Member From the List Below or Add a New Member on the Members Page</label>
+     <!-- MENU OF MEMBERS -->
+				<label for="member">
+					<span>Member:</span>
 						<select name="photo[member_id]">
 							<% @member.each do |member| %>
 								<option value="<%= member.id %>"><%= member.owner %></option>
 							<% end %>
 						</select>
+				</label>
+
+     <!-- CHECKLIST OF TAGS -->
+				<label for="tags">
+					<span>Tag Your Photo:</span>
+    				<% @tags.each do |tag| %>
+							<input type="checkbox" name="tags[]" value="<%= tag.id %>"><%= tag.name %>
+				<% end %>
+			</label>
 
 
-
-				<input type="submit" name="submit">
+					<input type="submit" name="submit" class="button">
 		</form>
 </div>
 

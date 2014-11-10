@@ -4,7 +4,7 @@
 
 # INDEX
 get '/tags'  do
-	@tags = Tag.all
+	@tags = Tag.order(name: :asc)
 	erb :'tags/index'
 end
 

@@ -22,11 +22,8 @@ end
 # CREATE - puts the member in the database and redirects to appropriate page
 post '/members/:id' do
 	member = Member.new(params[:member])
-	if member.save
-		redirect "/members/#{member.id}"
-	else
-		redirect "/members/new"
-	end
+	member.save
+	redirect "/members/#{member.id}"
 end
 
 # EDIT - Brings up the edit form
@@ -39,11 +36,8 @@ end
 # UPDATE - Updates the db and redirects to show the user the updates
 put '/members/:id' do
 	member = Member.find(params[:id])
-	if member.update(params[:member])
-			redirect "/members/#{member.id}"
-	else
-		redirect "/members/#{member.id}/edit"
-	end
+	member.update(params[:member])
+	redirect "/members/#{member.id}"
 end
 
 
@@ -56,6 +50,16 @@ put '/photos/:id' do
 	else
 		redirect "/photos/#{photo.id}/edit"
 	end
+end
+
+# DELETE
+delete '/members/:id' do
+  member = Member.find(params[:id])
+  if member.destroy
+    redirect('/members')
+  else
+    redirect("/members/#{member.id}")
+  end
 end
 
 # GET      /songs/:id/edit    yes

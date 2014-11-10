@@ -1,32 +1,47 @@
 <h1>Edit <%= @member.name %>'s Bio</h1>
-<h2>Please edit the appropriate fields below</h2>
 
 <div class="main_content">
-	<form action="/members/<%= @member.id %>" method="POST">
+	<form action="/members/<%= @member.id %>" method="POST" class="edit">
 	<input type="hidden" name="_method" value="PUT">
+		<h2>Please edit the appropriate fields below</h2>
 		
-			<label for="url">Image:</label>
+			<label for="url">
+				<span>Image:</span>
 				<input type="text" name="member[img_url]" value="<%= @member.img_url %>"><br>
+			</label>
 
-			<label for="location">Location:</label>
+			<label for="location">
+				<span>Location:</span>
 				<input type="text" name="member[location]" value="<%= @member.location %>"><br>
+			</label>
 
-			<label for="breed">Breed:</label>
+			<label for="breed">
+				<span>Breed:</span>
 				<input type="text" name="member[breed]" value="<%= @member.breed %>"><br>
+			</label>
 
-			<label for="birthday">Birthday:</label>
+			<label for="birthday">
+				<span>Birthday:</span>
 				<input type="text" name="member[birthday]" value="<%= @member.birthday %>"><br>
+			</label>
 
-			<label for="activities">Favorite Activity:</label>
+			<label for="activities">
+				<span>Favorite Activity:</span>
 				<input type="text" name="member[activities]" value="<%= @member.activities %>"><br>
+			</label>
 
-			<label for="toys">Favorite Toy:</label>
+			<label for="toys">
+				<span>Favorite Toy:</span>
 				<input type="text" name="member[toys]" value="<%= @member.toys %>"><br>								
+			</label>
 
-			<label for="owner">Owner:</label>
+			<label for="owner">
+				<span>Owner:</span>
 				<input type="text" name="member[owner]" value="<%= @member.owner %>"><br>
+			</label>
 
-				<input type="submit" name="submit">
+				<input type="submit" name="submit" class="button">
+				
 		</form>
 </div>
 

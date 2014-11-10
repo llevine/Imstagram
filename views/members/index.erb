@@ -1,12 +1,18 @@
-<h1>Imstagram's Contributers</h1>
-<a href="/members/new">New Member</a>
-<div class="main_content">
+<h1>The Imstagram Community</h1>
+<a href="/members/new" id="new">New Member</a>
+
+<div id="main_content">
 	<% @members.each do |member| %>
-		<h4>TEMPORARILY KEEP THE ID: <%= member.id %> | </h4>
-		<a href="/members/<%= member.id %>" alt="member image"><img src="<%= member.img_url %>">
-		<h2><%= member.name %> | <%= member.owner %></h2></a>
+		<div class="single member">
+			<a href="/members/<%= member.id %>">
+				<!-- <h4>TEMPORARILY KEEP THE ID: <%= member.id %> | </h4> -->
+				<img src="<%= member.img_url %>" class="single_photo">
+				<h2>"<%= member.name %>"</h2>
+			</a>
+		</div>
 	<% end %>
 </div>
+
 
 <!-- members table column headers -->
 	<!-- id | owner  |  name  |  img_url  |  birthday  |  location  |  breed  |  activities  |  toys  |  created_at -->

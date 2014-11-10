@@ -14,7 +14,7 @@ create table members(
 	breed varchar(255),
 	activities text,
 	toys text,
-	created_at timestamp
+	member_since date
 );
 
 create table photos(
@@ -22,7 +22,7 @@ create table photos(
 	title varchar(255),
 	img_url text,
 	location varchar(255),
-	created_at timestamp,
+	added date,
 	caption varchar(255),
 	member_id integer references members
 );

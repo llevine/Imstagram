@@ -26,7 +26,7 @@ tag_data = ["labrador", "golden lab", "havanese", "poodle", "shih tzu", "playtim
 
 breed_data = ["labrador", "golden lab", "havanese", "poodle", "beagle", "shih tzu", "cocker spaniel", "golden retriever", "yorkie", "great dane"]
 
-birthday_data = ["1996-01-08", "1990-11-29", "2012-01-08", "2014-01-01", "2010-10-16", "2011-11-29", "2005-05-16", "2008-06-24"]
+dates_data = ["1996-01-08", "1990-11-29", "2012-01-08", "2014-01-01", "2010-10-16", "2011-11-29", "2005-05-16", "2008-06-24"]
 
 image_data = ["http://placepuppy.it/200/300"]
 
@@ -34,17 +34,20 @@ toys_data = ["ball", "turtle", "frog", "rubber duck", "chicken"]
 
 activities_data = ["long walks in the park", "chasing after birds", "playing frisbee", "digging holes", "chewing shoes"]
 
+
+
 # creates 10 members
 10.times do
 	Member.create(
 		owner: "#{owner_first_name.sample} #{Faker::Name.last_name}",
 		name: "#{Faker::HipsterIpsum.word}",
 		img_url: "http://www.fillmurray.com/g/200/300",
-		birthday: birthday_data.sample,
+		birthday: dates_data.sample,
 		location: "#{Faker::AddressUS.state}",
 		breed: breed_data.sample,
 		activities: activities_data.sample,
-		toys: toys_data.sample
+		toys: toys_data.sample,
+		member_since: dates_data.sample
 		)
 end
 
@@ -62,6 +65,7 @@ end
 	img_url: image_data.sample,
 	location: "#{Faker::AddressUS.state}",
 	caption: "#{Faker::BaconIpsum.phrase}",
+	added: dates_data.sample,
 	member: Member.all.sample
 	})
 	photos.save

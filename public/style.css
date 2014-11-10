@@ -1,0 +1,235 @@
+html {
+/*		background: url(http://fc04.deviantart.net/fs70/i/2011/133/d/2/a_simple_background_texture_by_snoeffel-d3g9jow.jpg);
+*/}
+
+body {
+		color: #26c9d0;
+		margin: 0 75px;
+		padding-bottom: 75px;
+}
+
+/*-------- NAVBAR --------*/
+
+#nav, a {
+		background: none;
+		margin: 20px 6px;
+		font-family: 'helvetica';
+		font-size: 16pt;
+		text-decoration: none;
+		color: rgba(125, 255, 5, .8);
+		text-align: center;
+}
+
+#new {
+		display: block;
+		margin: auto;
+		font-size: 14pt;
+		font-weight: lighter;
+}
+
+.divider {
+		color: #d0af00;
+}
+
+/*-------- END --------*/
+
+/*-----------------------MAIN CONTENT-----------------------*/
+
+
+/*-------- HOMEPAGE SPECIFIC STYLING --------*/
+h1, h2 {
+		margin: 0;
+		font-family: 'Amatic SC', cursive;
+		font-size: 1.75em;
+		text-align: center;
+	}
+
+h2 {
+		margin-top: -5px;
+	}
+
+h1 {
+		font-size: 4em;	
+	}
+
+#immy {
+		display: block;
+		max-width: 660px;
+		margin: 35px auto;
+}
+
+/*-------- END --------*/
+
+
+/*------Index Styling------*/
+
+
+#main_content {
+		width: 100%;
+		text-align: center;
+}
+
+	/*individual photo styling*/
+.single_photo {
+		display: block;
+		margin: auto;
+		max-width: 150px;
+		max-height: 150px;
+		border: 3px solid black;
+}
+
+	/*individual listing styling*/
+.single {
+		display: inline-block;
+		width: 170px;
+		margin: 7px;
+		padding-top: 12px;
+		background: rgba(255, 255, 255, .6);
+		border: 2.5px solid #43443d;
+}
+
+	/*------Show Page Styling------*/
+
+img#main_image {
+		float: left;
+		max-height: 250px;
+}
+
+#bioplate, .text {
+		display: inline-block;
+		margin-top: 45px;
+}
+
+	/*the text in the bio plate. this is styling a div*/
+.text {
+		text-align: left;
+		margin-left: 15px;
+		letter-spacing: 1.5pt;
+		font-family: 'Asap', sans-serif;
+}
+
+.text span {
+		color: rgba(125, 255, 5, .8);
+		font-weight: 700;
+}
+
+button {
+		margin-top: 10px;
+		color: rgba(125, 255, 5, .8);
+		background: #171717;
+		border: none;
+}
+
+/*styling for the posts box on the members page*/
+#all_posts {
+	margin: 20px;
+	border: 3px solid #43443d;
+}
+
+.post {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+#all_posts>h1 {
+	font-size: 30pt;
+}
+
+#all_posts>a {
+	display: block;
+	font-size: 12pt;
+	margin-top: 0;
+}
+
+/*end styling for posts box on members page*/
+
+/*------Form Styling------*/
+
+.edit {
+		margin: 0 auto;
+    max-width: 500px;
+
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    /*----weight font-size fontname, backup font-----*/
+    font: 700 10pt 'Asap', sans-serif;
+    color: #888;
+    border:1px solid #E4E4E4;
+}
+.edit h2 {
+    font-size: 25px;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom:1px solid #E4E4E4;
+    margin: -10px -15px 30px -10px;;
+    color: #888;
+}
+.edit label {
+    display: block;
+    margin: 0px;
+}
+
+/* > means only select the child level elements. ex) below it means only select the child spans of label*/
+.edit label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+.edit input[type="text"], .edit textarea, .edit select {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.edit textarea{
+    padding: 5px 3px 3px 5px;
+}
+.edit select {
+    background: #FFF url('down-arrow.png') no-repeat right;
+    background: #FFF url('down-arrow.png') no-repeat right);
+    text-indent: 0.01px;
+    width: 70%;
+    height: 35px;
+    line-height: 25px;
+}
+.edit textarea{
+    height:100px;
+}
+.edit .button {
+    background: #E27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
+/*------------------------------------------EVENT HANDLERS-------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------*/
+
+#new:hover {
+	text-decoration: underline;
+	color: #d0af00;
+}
+
+.edit .button:hover {
+    background: #CF7A7A
+}
+
+
+

@@ -6,7 +6,14 @@
 		<li>"<%= @photo.caption %>"</li>
 		<li>Posted by: <%= @photo.member.owner %></li>
 		<li>Taken in: <%= @photo.location %></li>
-		<li>On: <%= @photo.created_at %></li>
+		<li>On: <%= @photo.added %></li>
+	</ul>
+
+	<h4>Tags:</h4>
+	<ul>
+		<% @photo.tags.each do |tag| %>
+		<a href="/tags/<%= tag.id %>"><li><%= tag.name %></li></a>
+		<% end %>
 	</ul>
 </div>
 

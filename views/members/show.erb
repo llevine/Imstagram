@@ -1,24 +1,51 @@
-<h1><%= @member.name %>'s Bio-Page</h1>
-<div class="single member">
-	<h4><%= @member.id %> : TEMPRARILY HERE</h4>
-	<img src="<%= @member.img_url %>">
-		<ul>
-			<li>Name: <%= @member.name %></li>
-			<li>From: <%= @member.location %></li>
-			<li>Breed: <%= @member.breed %></li>
-			<li>Birthday: <%= @member.birthday %></li>
-			<li>Favorite Activity: <%= @member.activities %></li>
-			<li>Favorite Toy: <%= @member.toys %></li>
-			<li>Owner: <%= @member.owner %></li>
-			<li>Member Since: <%= @member.created_at %></li>
-		</ul>
-</div>
+<!-- RUBY FUNCTIONS --> 
 
-<form>
-	<button type="submit" formmethod="get" formaction="/members/<%= @member.id %>/edit">
-	EDIT POST</button>
-</form>
+<!-- formats the dates -->
+<% def reverse_array (date)
+	date_array = date.to_s.split("-")
+	year = date_array.first
+	date_array.insert(3, year).shift
+	return date_array.join("-")
+	end%>
+
+<!-- html starts here -->
+<h1><%= @member.name %>'s Bio-Page</h1>
+<div id="main_content">
+		<div id="bioplate">
+			<img src="<%= @member.img_url %>" id="main_image">
+				<div class="text">
+					<span>Name:</span> <%= @member.name %><br>
+					<span>From:</span> <%= @member.location %><br>
+					<span>Breed:</span> <%= @member.breed %><br>
+					<span>Birthday:</span> <%=  reverse_array(@member.birthday) %><br>
+					<span>Favorite Activity:</span> <%= @member.activities %><br>
+					<span>Favorite Toy:</span> <%= @member.toys %><br>
+					<span>Owner:</span> <%= @member.owner %><br>
+					<span>Member Since:</span> <%=  reverse_array(@member.member_since) %><br>
+					<form>
+						<button type="submit" formmethod="get" formaction="/members/<%= @member.id %>/edit">EDIT MEMBER</button>
+					</form>
+
+					<form action="/members/<%=@member.id%>" method="POST"> 
+						<input type="hidden" name="_method" value="DELETE">
+						<button id="delete">DELETE MEMBER</button>
+					</form>
+				</div>
+		</div>
+		<div id="all_posts">
+			<h1>Posts</h1>
+			<a href="/photos/new">ADD POST</a>
+			
+			<% @member.photos.each do |photo| %>
+			<div class="post">
+				<a href="/photos/<%= photo.id %>"><img src="<%= photo.img_url %>"><br>
+				<%= photo.title %></a>
+			</div>
+			<% end %>
+		</div>
+
+</div>
 
 <!-- members table column headers -->
 	<!-- id | owner  |  name  |  img_url  |  birthday  |  location  |  breed  |  activities  |  toys  |  created_at -->
-<!-- members table joined with photos -->
+<!-- members table joined with photos
