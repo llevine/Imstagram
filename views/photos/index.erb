@@ -1,17 +1,13 @@
 <div class="members">
-	<h1>All Photo Posts</h1>
+	<h1>All Photos</h1>
 	<h2>
 		<a href="/photos/new" id="new">New Post</a>
 	</h2>
 		<div id="group">
 			<% @photos.each do |photo| %>
-				<div class="single">
+				<div class="photo">
 					<a href="/photos/<%= photo.id %>">
-						<img src="<%= photo.img_url %>" class="single_post">
-						<p><%= photo.title %><br>
-							Posted By: <%= photo.member.owner %><br>
-							<%= photo.created_at %>
-							</p>
+						<img src="<%= photo.img_url %>">
 						</a>
 				</div>
 			<% end %>

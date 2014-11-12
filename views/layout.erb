@@ -1,4 +1,6 @@
 <html>
+
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/normalize.css">
@@ -12,14 +14,26 @@
 	
 	<title>Imstagram</title>
 </head>
+
+
 <body>
+	<div id="logo_holder">
+			<a href="/"><img src="http://i.imgur.com/FxoApi4.gif" id="logo"></a>
+<!-- <a href="/"><img src="http://i.imgur.com/pBkg3zz.gif" id="logo"></a> -->
+
+<!--  		<a href="/"><img src="http://i.imgur.com/uSXeNMw.gif" id="logo"></a>	
+ --> 		<hr>
+			<h2>&#8226; A place for dog owners to share their dog pics &#8226;</h2>
+		<hr>
+	</div>
 	<div id="nav">
- 			<a href="/">Home</a> <span class="divider">|</span>			
-			<a href="/members">Members</a> <span class="divider">|</span>
-			<a href="/photos">Photos</a> <span class="divider">|</span>
-			<a href="/tags">Tags</a>
-		</div>
+			<a href="/members"><img src="http://i.imgur.com/9726FK0.gif"></a>
+			<a href="/photos"><img src="http://i.imgur.com/I2VJevM.gif"></a>
+			<a href="/tags"><img src="http://i.imgur.com/O91UOa9.gif"></a>
+	</div>
 
 	<%= yield %>
 </body>
+
+
 </html>

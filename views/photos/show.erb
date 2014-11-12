@@ -8,6 +8,7 @@
 						<span>Posted by:</span> <a href="/members/<%= @photo.member.id%>"><%= @photo.member.owner %></a><br>
 						<span>Taken in:</span> <%= @photo.location %><br>
 						<span>Posted On:</span> <%= @photo.created_at %><br>
+						<span>Updated On:</span> <%= @photo.updated_at %><br>
 						<span>Tags:</span> 
 							<% @photo.tags.each do |tag| %>
 							<a href="/tags/<%= tag.id %>"><%= tag.name %></a>,
@@ -23,6 +24,8 @@
 						<input type="hidden" name="_method" value="DELETE">
 						<button id="delete">DELETE</button>
 					</form>
+
+					<input type="hidden" name="photo[created_at]" value="<%= @photo.created_at %>">
 			</div>
 </div>
 

@@ -8,8 +8,8 @@
 				<div class="single">
 					<a href="/members/<%= member.id %>">
 						<img src="<%= member.img_url %>">
-						<p>"<%= member.name %>"<br>
-						Owned By: <%= member.owner %></p>
+						<p><span>"<%= member.name %>"</span><br>
+						<%= member.owner %><br></p>
 					</a>
 				</div>
 			<% end %>

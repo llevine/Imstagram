@@ -11,6 +11,7 @@ end
 # NEW - brings up the create a new photo form
 get '/photos/new' do
 	@member = Member.all
+	@photo = Photo.all
 	@tags = Tag.all
 	erb :'photos/new'
 end

@@ -36,12 +36,10 @@
 					<label for="tags">
 						<span>Tag Your Photo:</span>
 	    				<% @tags.each do |tag| %>
-								<input type="checkbox" name="tags[]" value="<%= tag.id %>"><%= tag.name %>
+								<input type="checkbox" name="tags[]" value="<%= tag.id %>" checked> <%= tag.name %>
 					<% end %>
 				</label>
-
-
-						<input type="submit" name="submit" class="button">
+					<input type="submit" name="submit" class="button">
 			</form>
 </div>
 

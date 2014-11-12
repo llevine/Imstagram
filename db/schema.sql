@@ -23,6 +23,7 @@ create table photos(
 	img_url text,
 	location varchar(255),
 	created_at timestamp,
+	updated_at timestamp,
 	caption varchar(255),
 	member_id integer references members
 );

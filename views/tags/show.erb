@@ -1,16 +1,20 @@
 <div class="tags show">
 	<h1 class="tag_name"><%= @tag.name %>s</h1>
 		
-		<form action="/tags/<%=@tag.id%>" method="POST"> 
+		<form action="/tags/<%=@tag.id%>" method="POST" id="tag"> 
 			<input type="hidden" name="_method" value="DELETE">
 			<button id="delete">DELETE TAG</button>
 		</form>
+
 		
 		<% @tag.photos.each do |photo| %>
-			<a href="/photos/<%= photo.id %>"><div class="post">
-				<h2><%= photo.title %></h2><br>
-				<img src="<%= photo.img_url %>">
-			</div></a>
+		<div class="post single_tag">
+			<a href="/photos/<%= photo.id %>">
+				<%= photo.title %><br>
+				<img src="<%= photo.img_url %>"><br>
+				<%= photo.created_at %><br>
+				<%= photo.updated_at %>
+			</a></div>
 		<% end %>
 </div>
 
