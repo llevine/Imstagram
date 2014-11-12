@@ -283,6 +283,10 @@ hr {
 	margin-top: 10px;
 }
 
+.tags>#new {
+	text-align: center;
+}
+
 /*-------- END --------*/
 
 /* EVENT HANDLERS */
@@ -302,4 +306,8 @@ a:hover, #new:hover {
 
 .single_tag:hover, .single:hover {
 	border: 2px solid #78a1d3;
+}
+
+.tags>#new:hover {
+	color: black;
 }

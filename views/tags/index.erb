@@ -1,5 +1,11 @@
 <div class="members tags">
 	<h1>Click A Tag To See All the Related Images</h1>
+	<form  action="/tags" method="POST" id="new">
+		<label for="new_tag">
+					<span>New Tag:</span>
+						<input type="text" name="tag[name]" value=""><input type="submit" name="submit" class="button">
+		</label>
+	</form>
 	<p>
 		<div id="tags_group">
 		<% @tags.each do |tag| %>

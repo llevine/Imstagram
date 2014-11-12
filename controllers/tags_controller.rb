@@ -21,3 +21,13 @@ delete '/tags/:id' do
 	tag.destroy
 	redirect('/tags')
 end
+
+
+# ON OTHER PAGEs  checkbox inputbox
+
+# CREATE
+post('/tags') do
+  new_tag = Tag.new(params[:tag])
+  new_tag.save
+  redirect("/tags") 
+end
