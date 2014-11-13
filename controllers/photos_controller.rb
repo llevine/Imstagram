@@ -37,6 +37,7 @@ end
 get '/photos/:id/edit' do
 	@photo = Photo.find(params[:id])
 	@member = Member.all
+	@tags = Tag.all
 	erb :'photos/edit'
 end
 

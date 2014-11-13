@@ -14,17 +14,18 @@
 					
 
 					<input type="hidden" name="photo[updated_at]" value="<%= @photo.updated_at %>"><br>
+	    
 	     <!-- MENU OF MEMBERS -->
 					<label>Choose a Member<br>
 							<select name="photo[member_id]">
-								<% @member.each do |member| %>
-									<option value="<%= member.id %>"><%= member.owner %></option>
+								<% @member.each do |member| %>				
+									<option <%= "selected" if member == @photo.member %> value="<%= member.id %>"><%= member.owner %></option>
 								<% end %>
 							</select>
 					</label>
 
-					<input type="submit" name="submit" class="button">
-			</form>
+			<input type="submit" name="submit" class="button">
+		</form>
 </div>
 
 <!-- photos table column headers -->

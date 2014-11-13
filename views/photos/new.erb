@@ -33,12 +33,14 @@
 					</label>
 
 	     <!-- CHECKLIST OF TAGS -->
-					<label for="tags">
-						<span>Tag Your Photo:</span>
-	    				<% @tags.each do |tag| %>
-								<input type="checkbox" name="tags[]" value="<%= tag.id %>" checked> <%= tag.name %>
-					<% end %>
-				</label>
+		     <div id="tag_add">
+						<label for="tags">
+							<span>Tag Your Photo:</span>
+		    				<% @tags.each do |tag| %>
+									<input type="checkbox" name="tags[]" value="<%= tag.id %>" checked class="tag"> <%= tag.name %>
+								<% end %>
+						</label>
+					</div>
 					<input type="submit" name="submit" class="button">
 			</form>
 </div>

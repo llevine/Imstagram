@@ -194,6 +194,31 @@ hr {
 	margin-bottom: 8px;
 }
 
+.tags a, #tags_group {
+	text-align: center;
+	font: 400 14pt 'PT Sans', sans-serif;
+	color: black;
+}
+
+
+.single_tag {
+	margin-top: 10px;
+}
+
+.tags>#new {
+	text-align: center;
+}
+
+#tag_add {
+	text-align: center;
+	float: none;
+	margin: 40px;
+}
+
+#tag_add .tag {
+	margin-top: 30px;
+}
+
 
 
 /*-------- END --------*/
@@ -233,6 +258,7 @@ hr {
     margin-top: 10px;
     color: #888;
 }
+
 .edit input[type="text"], .edit textarea, .edit select {
     border: 1px solid #DADADA;
     color: #888;
@@ -270,21 +296,6 @@ hr {
     border-radius: 3px;
     text-shadow: 1px 1px 1px #9E3F3F;
     cursor: pointer;
-}
-
-.tags a, #tags_group {
-	text-align: center;
-	font: 400 14pt 'PT Sans', sans-serif;
-	color: black;
-}
-
-
-.single_tag {
-	margin-top: 10px;
-}
-
-.tags>#new {
-	text-align: center;
 }
 
 /*-------- END --------*/
