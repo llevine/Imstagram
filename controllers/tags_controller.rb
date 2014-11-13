@@ -27,7 +27,11 @@ end
 
 # CREATE
 post('/tags') do
-  new_tag = Tag.new(params[:tag])
-  new_tag.save
+	@tags = Tag.all
+	 new_tag = Tag.new(params[:tag])
+
+	if Tag.exists?(name: new_tag[:name]) == false 
+		new_tag.save
+	end
   redirect("/tags") 
 end

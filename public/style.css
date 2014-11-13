@@ -141,7 +141,7 @@ hr {
 }
 
 
-.text, #bioplate form {
+.text, #bioplate form, .text>a {
 		color: #78a1d3;
 		text-align: left;
 		margin-left: 15px;
@@ -298,7 +298,6 @@ hr {
 a:hover, #new:hover {
 	color: #78a1d3;
 }
-
 
 .single_tag>a:hover {
 	color: black;
